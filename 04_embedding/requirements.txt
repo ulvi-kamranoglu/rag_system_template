@@ -1,0 +1,3 @@
+# Run from the Chatbot_projects root; versions are defined in pyproject.toml.
+-e ./storage_common
+-e ./04_embedding

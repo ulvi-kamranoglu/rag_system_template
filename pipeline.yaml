@@ -1,0 +1,16 @@
+# Both scheduler and admin invoke run_pipeline.py; no scheduler runs in Python.
+collection_config: 01_data_collection/config/settings.yaml
+canonical_config: 02_data_canonicalization/config/config.yaml
+chunk_config: 03_data_chunking/config/config.yaml
+embedding_config: 04_embedding/config/config.yaml
+retrieval_config: 05_retrieval/config/config.yaml
+state_dir: runtime_data/pipeline_runs
+raw_dir: shared_data/01_raw
+# Public stage commands. Each accepts --config, --mode, --run-id and --result.
+# Replace a module here when a stage implementation is replaced.
+stage_commands:
+  collection: [wp_tracker.stage_cli]
+  canonical: [canonical_pipeline.stage_cli]
+  chunk: [chunking_pipeline.stage_cli]
+  embedding: [embedding.stage_cli]
+  retrieval: [retrieval.stage_cli]

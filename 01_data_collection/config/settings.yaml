@@ -1,0 +1,43 @@
+site:
+  base_url: "https://unec.edu.az"
+  default_language: "az"
+  timezone: "Asia/Baku"
+  user_agent: "UNECWordPressChangeTracker/2.0 (public content; daily scan)"
+
+network:
+  per_page: 100
+  timeout_seconds: 30
+  retries: 3
+  delay_seconds: 0.25
+  max_pages_per_source: 500
+
+safety:
+  max_deleted_fraction: 0.05
+  # If more than 5% of the baseline disappears, abort the entire run.
+  # An absent published API item may be unpublished, private, trashed, or deleted.
+
+storage:
+  import_dir: "data/import"
+  archive_dir: "../archive_data/01_raw"
+  shared_dir: "../shared_data/01_raw"
+  state_dir: "data/state"
+  history_dir: "data/history"
+
+# Independent source state; only the combined batch is public in 01_raw.
+wordpress:
+  enabled: true
+  sources: [pages, posts]
+instagram:
+  # Bootstrap each profile and establish browser sessions before enabling.
+  enabled: true
+  profiles: [uneceduaz, adalat.muradov]
+  auth_dir: data/instagram_auth
+  max_scrolls: 40
+  # Scan only posts newer than the newest collected post; stop after this many
+  # consecutive non-pinned posts that are not newer (minimum 4: up to 3 pinned).
+  boundary_old_posts: 4
+news:
+  # Bootstrap from data/import/news.parquet (the joined dataset) before enabling.
+  # Scans read the sitemap; deletions follow safety.max_deleted_fraction.
+  enabled: true
+  delay_seconds: 1.0

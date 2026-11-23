@@ -1,0 +1,10 @@
+input_dir: ../shared_data/01_raw
+merge_base: true
+quality:
+  # Count characters after HTML/Unicode cleanup, excluding whitespace.
+  # Conservative default; increase explicitly to reject longer short answers.
+  min_content_chars: 6
+storage:
+  archive_dir: ../archive_data/02_clean
+  shared_dir: ../shared_data/02_clean
+# Multiple input files are cleaned independently and merged; inputs are read-only.

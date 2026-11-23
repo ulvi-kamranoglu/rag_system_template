@@ -1,0 +1,8 @@
+/.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+/reports/*
+!/reports/.gitkeep
+
+# Central archive_data/ and shared_data/ are ignored by the workspace .gitignore.

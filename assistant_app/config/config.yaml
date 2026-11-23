@@ -1,0 +1,15 @@
+server:
+  host: 127.0.0.1
+  port: 8000
+  cors_origins: []
+llm:
+  url: http://127.0.0.1:11434
+  model: unec-assistant
+  timeout: 180
+  temperature: 0.2
+  num_ctx: 8192
+  max_passage_chars: 1500
+conversation:
+  top_k: 8
+  history_turns: 3
+  log_path: logs/chat_log.jsonl

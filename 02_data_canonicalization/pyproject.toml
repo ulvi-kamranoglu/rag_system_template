@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "unec-data-canonicalization"
+version = "0.1.0"
+description = "Read-only Parquet cleaning and canonicalization pipeline"
+requires-python = ">=3.10"
+dependencies = ["pipeline-storage>=1,<2", "pandas>=2.1", "pyarrow>=14", "beautifulsoup4>=4.12", "PyYAML>=6.0", "ftfy>=6,<7", "lingua-language-detector>=2,<3"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+test = ["pytest>=8,<10"]
+
+[project.scripts]
+canonical-pipeline = "canonical_pipeline.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+namespaces = false
+
+[tool.setuptools.package-data]
+canonical_pipeline = ["config/*.yaml"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

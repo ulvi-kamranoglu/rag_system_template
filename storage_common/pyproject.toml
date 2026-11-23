@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pipeline-storage"
+version = "1.0.0"
+description = "Immutable run archives and recoverable latest-directory publication"
+requires-python = ">=3.10"
+dependencies = ["filelock>=3.12,<5"]
+
+[project.optional-dependencies]
+test = ["pytest>=8,<10"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+namespaces = false

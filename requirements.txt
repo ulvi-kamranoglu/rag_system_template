@@ -1,0 +1,8 @@
+-e ./storage_common
+-e ./01_data_collection
+-e ./02_data_canonicalization
+-e ./03_data_chunking
+-e ./04_embedding
+-e ./05_retrieval
+-e ./orchestration
+-r requirements-assistant.txt

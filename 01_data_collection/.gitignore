@@ -1,0 +1,23 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+.coverage
+logs/*
+!logs/.gitkeep
+data/import/*
+!data/import/.gitkeep
+data/output/*
+!data/output/.gitkeep
+data/state/*
+!data/state/.gitkeep
+!data/state/baseline.parquet
+!data/state/snapshot.parquet
+data/history/*
+!data/history/.gitkeep
+data/reports/*
+!data/reports/.gitkeep
+
+# Central archive_data/ and shared_data/ are ignored by the workspace .gitignore.
+# Keep legacy generated output ignored; new runs never write data/output.

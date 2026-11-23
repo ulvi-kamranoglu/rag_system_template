@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "unec-retrieval"
+version = "0.1.0"
+description = "Archived Qdrant and BM25 indexing with hybrid retrieval"
+requires-python = ">=3.10"
+dependencies = ["pipeline-storage>=1,<2", "unec-embedding>=0.1,<1", "numpy>=1.26,<3", "polars>=1,<2", "pyarrow>=15", "PyYAML>=6,<7", "filelock>=3", "qdrant-client", "bm25s", "faiss-cpu"]
+
+[project.optional-dependencies]
+test = ["pytest>=8,<10"]
+
+[project.scripts]
+retrieval-pipeline = "retrieval.cli:main"
+retrieval-search = "retrieval.cli:search_main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+namespaces = false
+
+[tool.setuptools.package-data]
+retrieval = ["config/*.yaml"]

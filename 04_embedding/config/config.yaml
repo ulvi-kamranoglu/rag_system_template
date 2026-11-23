@@ -1,0 +1,16 @@
+# Relative paths resolve from the embedding project root (config/..).
+# CLI --input resolves from the terminal's current directory.
+input_dir: ../shared_data/03_chunks
+# dataset_name: chatbot_dataset_v1.3
+# input_path: ../shared_data/03_chunks/chatbot_dataset_v1.3_chunks_384.parquet
+storage:
+  archive_dir: ../archive_data/04_embeddings
+  shared_dir: ../shared_data/04_embeddings
+model:
+  id: BAAI/bge-m3
+  dimension: 1024
+  document_max_length: 384
+  query_max_length: 128
+  batch_size: 4
+  use_fp16: false
+  version: bge-m3-dense-1024-v1

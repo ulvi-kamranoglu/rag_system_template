@@ -1,0 +1,11 @@
+model_id: BAAI/bge-m3
+input_dir: ../shared_data/02_clean
+storage:
+  archive_dir: ../archive_data/03_chunks
+  shared_dir: ../shared_data/03_chunks
+safety_margin: 4
+min_content_budget: 32
+variants:
+  - {max_tokens: 384, overlap_tokens: 64}
+# Reuses source IDs; no canonical ID regeneration.
+# For FAQ/form, the question is used as title/prefix and the answer is chunked.

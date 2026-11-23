@@ -1,0 +1,17 @@
+[Unit]
+Description=UNEC AI Assistant HTTP API
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=unec-assistant
+WorkingDirectory=/srv/unec_ai_assistant_api
+Environment=PYTHONUTF8=1
+ExecStart=/srv/unec_ai_assistant_api/.venv/bin/python -m assistant_app.server
+Restart=on-failure
+RestartSec=10
+TimeoutStopSec=240
+
+[Install]
+WantedBy=multi-user.target

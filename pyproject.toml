@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "unec-ai-assistant-server"
+version = "0.1.0"
+description = "UNEC AI Assistant API and data processing services"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["pipeline-storage>=1,<2", "unec-wordpress-change-tracker>=2,<3", "unec-data-canonicalization>=0.1,<1", "chunking-pipeline>=0.1,<1", "unec-embedding>=0.1,<1", "unec-retrieval>=0.1,<1", "unec-orchestration>=0.1,<1", "unec-assistant-app>=0.1,<1"]
+
+[project.optional-dependencies]
+test = ["pytest>=8,<10"]
+
+[tool.setuptools]
+packages = []

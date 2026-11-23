@@ -1,0 +1,41 @@
+# Paths resolve from project_root. null uses the editable checkout root, or
+# the working directory for a wheel installation. CLI --project-root overrides.
+project_root: null
+dataset_name: null
+input_dir: shared_data/04_embeddings
+storage:
+  shared_data_dir: shared_data
+  shared_dir: shared_data/05_indexes
+  archive_dir: archive_data/05_indexes
+index_version: unec-dense-qdrant-v1
+qdrant:
+  url: http://127.0.0.1:6333
+  collection: unec_chunks
+  vector_dimension: 1024
+  batch_size: 128
+search:
+  vector_backend: qdrant
+  dense_top_k: 20
+  bm25_top_k: 20
+  hybrid_top_k: 20
+  rrf_k: 60
+  final_top_k: 8
+reranker:
+  batch_size: 4
+  date_context: true
+  model_id: BAAI/bge-reranker-v2-m3
+  use_fp16: true
+  input_top_k: 20
+  query_max_length: 256
+  passage_max_length: 512
+ranking:
+  enabled: true
+  deduplicate: true
+  diversify_documents: true
+  max_chunks_per_document: 1
+  candidate_multiplier: 5
+  recent_candidates: true
+  recent_730_limit: 20
+  recent_365_limit: 10
+  metadata_ranking: true
+  page_weight: 0.10

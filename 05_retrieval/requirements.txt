@@ -1,0 +1,4 @@
+# Run from the Chatbot_projects root.
+-e ./storage_common
+-e ./04_embedding
+-e ./05_retrieval

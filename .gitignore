@@ -1,0 +1,121 @@
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*.pyd
+*.so
+
+# =========================
+# Virtual environments
+# =========================
+.venv/
+venv/
+env/
+
+# =========================
+# IDE
+# =========================
+.idea/
+.vscode/
+
+# =========================
+# Environment / secrets
+# =========================
+.env
+*.env
+01_data_collection/data/instagram_auth/
+01_data_collection/data/output/
+# Teammate distribution includes browser session files; import source code only.
+01_data_collection.zip
+
+# .env.example Git-də qalsın
+!.env.example
+
+# =========================
+# Logs
+# =========================
+*.log
+logs/
+diagnostics/
+
+# =========================
+# Datasets / generated data
+# =========================
+*.parquet
+*.csv
+*.jsonl
+
+# =========================
+# Embeddings / indexes
+# =========================
+*.npy
+*.npz
+*.index
+*.faiss
+
+# =========================
+# Models / cache
+# =========================
+.cache/
+huggingface/
+models/
+
+# =========================
+# Qdrant local storage
+# =========================
+qdrant_storage/
+
+# =========================
+# Shared pipeline artifacts
+# =========================
+shared_data/01_raw/*
+shared_data/02_clean/*
+shared_data/03_chunks/*
+shared_data/04_embeddings/*
+shared_data/05_indexes/*
+
+# Keep empty shared folders in Git
+!shared_data/01_raw/.gitkeep
+!shared_data/02_clean/.gitkeep
+!shared_data/03_chunks/.gitkeep
+!shared_data/04_embeddings/.gitkeep
+!shared_data/05_indexes/.gitkeep
+
+# =========================
+# OS
+# =========================
+.DS_Store
+Thumbs.db
+
+.pytest_cache/
+# Versioned archive history: include datasets, vectors and archived logs.
+# Global environment, virtualenv and cache exclusions still apply.
+archive_data/*
+!archive_data/README.md
+!archive_data/01_raw/
+!archive_data/02_clean/
+!archive_data/03_chunks/
+!archive_data/04_embeddings/
+!archive_data/05_indexes/
+!archive_data/**/*.parquet
+!archive_data/**/*.csv
+!archive_data/**/*.jsonl
+!archive_data/**/*.npy
+!archive_data/**/*.npz
+!archive_data/**/*.index
+!archive_data/**/*.faiss
+!archive_data/**/*.log
+runtime_data/
+.local_history/
+**/*.egg-info/
+.test-results/
+.verification/
+build/
+dist/
+
+# Track all shared and archived artifacts, overriding exclusions above.
+!shared_data/
+!shared_data/**
+!archive_data/
+!archive_data/**
